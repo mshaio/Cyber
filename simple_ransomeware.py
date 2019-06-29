@@ -70,8 +70,8 @@ if __name__ == "__main__":
     for file in os.listdir("./testfolder"):
         if file.endswith(".html"):
             print(os.path.join("./testfolder", file))
-    # encrypt_AES(rsa_password)
-    # decrypt_AES(rsa_password)
+    encrypt_AES(rsa_password)
+    decrypt_AES(rsa_password)
     with open('./testfolder/encrypt.txt', 'r') as plaintext_file:
         content = plaintext_file.read()
     encrypted_content = encrypt(symmetric_key_password,content)
@@ -81,9 +81,7 @@ if __name__ == "__main__":
     decrypted_content = decrypt(symmetric_key_password,encrypted_content)
     decrypted_file(decrypted_content)
     # remove_original_file("./encrypt.txt")
-    # key = Fernet.generate_key()
-    # print(key)
-    # print(type(key))
+
 # or if you want to traverse directory, use os.walk:
 #
 # import os
